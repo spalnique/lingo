@@ -1,5 +1,6 @@
-export enum ButtonType {
+export enum ButtonAction {
   login = 'login',
   register = 'register',
-  button = 'button',
+  book = 'book',
+  default = 'default',
 }

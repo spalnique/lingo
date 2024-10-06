@@ -1,37 +1,16 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import Logo from '../Logo/Logo.tsx';
+import Button from '../Button/Button.tsx';
+import { ButtonAction } from '../../@types/action.enum.ts';
+import Navigation from '../Navigation/Navigation.tsx';
 
 const Header: FC = () => {
-  const flagTWStyles = [
-    'content-[""]',
-    'absolute',
-    'top-1/2',
-    '-translate-y-1/2',
-    '-left-9',
-    'block',
-    'h-7',
-    'w-7',
-    'rounded-full',
-    'bg-gradient-to-b',
-    'from-blue-600',
-    'to-50%',
-    'from-50%',
-    'to-yellow-300',
-  ]
-    .map((style) => `before:${style}`)
-    .join(' ');
-
   return (
-    <header className='bg-white flex justify-center border border-red-300'>
-      <NavLink
-        to='/'
-        className={`${flagTWStyles} relative text-xl text-[#121417] tracking-[-0.02em] leading-6`}>
-        LearnLingo
-      </NavLink>
-      <nav className='flex justify-center gap-7 grow'>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/teachers'>Teachers</NavLink>
-      </nav>
+    <header className='bg-white flex justify-center items-center pt-5 mb-5'>
+      <Logo />
+      <Navigation />
+      <Button action={ButtonAction.login} />
+      <Button action={ButtonAction.register} />
     </header>
   );
 };
