@@ -14,5 +14,5 @@ export type AppState = {
     loading: boolean;
     error: FirebaseError | null;
   };
-  modal: { isOpen: boolean; id: string };
+  modal: { isOpen: boolean; id: string, type:  };
 };
